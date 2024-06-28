@@ -8,7 +8,7 @@ import { useStudentId } from "./context/StudentIdContext";
 
 export default function Component() {
   const navigate = useNavigate();
-  const { updateStudentId } = useStudentId(); // Using the context hook to access studentId
+  // Using the context hook to access studentId
 
   const [studentFullname, setStudentFullname] = useState("");
   const [studentEmail, setStudentEmail] = useState("");
