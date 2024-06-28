@@ -1,0 +1,83 @@
+* {
+    transition: all 0.3s ease;
+}
+
+/* Additional styles for the login form */
+section {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    padding: 2rem;
+    padding-left: 20px;
+    background: transparent;
+    background-color: #05483c85;
+    border-radius: 10px;
+    box-shadow: rgba(255, 255, 255, 0.4) 5px 5px,
+        rgba(255, 255, 255, 0.3) 10px 10px,
+        rgba(255, 255, 255, 0.2) 15px 15px,
+        rgba(255, 255, 255, 0.1) 20px 20px,
+        rgba(255, 255, 255, 0.05) 25px 25px;
+    text-align: center;
+}
+
+section:hover{
+    box-shadow: rgba(255, 255, 255, 0.4) -5px 5px,
+        rgba(255, 255, 255, 0.3) -10px 10px,
+        rgba(255, 255, 255, 0.2) -15px 15px,
+        rgba(255, 255, 255, 0.1) -20px 20px,
+        rgba(255, 255, 255, 0.05) -25px 25px;
+}
+  
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+  
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+}
+  
+input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+  
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4b5563;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: #063b5e;
+}
+  
+.errMsg {
+    color: red;
+    margin-bottom: 1rem;
+}
+  
+.offscreen {
+    display: none;
+}
+  
+.line a {
+    color: #0070f3;
+    text-decoration: none;
+}
+  
+.line a:hover {
+    text-decoration: underline;
+}
