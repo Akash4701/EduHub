@@ -1,8 +1,6 @@
 import mongoose, { Schema } from "mongoose";
-import { Assignment } from "../models/assignment.model.js";
-const teacherSchema = new Schema(
+const adminSchema = new Schema(
   {
-    dp:String,
     username: {
       type: String,
       required: true,
@@ -18,21 +16,10 @@ const teacherSchema = new Schema(
       lowercase: true,
       trim: true,
     },
-    teacherId:{
-        type:String,
-        required:true,
-    },
     fullName: {
-      type: String,
+      type: true,
       required: true,
       trim: true,
-    },
-    avatar: {
-      type: String,
-    },
-    instituteName: {
-      type: String,
-      required: true,
     },
     password: {
       type: String,
@@ -40,25 +27,26 @@ const teacherSchema = new Schema(
       unique: true,
       trim: true,
     },
-    refreshToken: {
-      type: String,
+    givePermissions: {
+      type:Boolean,
+      default: false
     },
-    permission: {
-      type: Boolean,
-      default: false,
+    instituteName:{
+        type:String,
+        required:true
+    },
+    instituteId:{
+        type:String,
+        required:true
     },
     allowedStudents:[{
         type:Schema.Types.ObjectId,
         ref:"Student"
-    }],
-    assignments:[{
-      type:Schema.Types.ObjectId,
-      ref:"Assignment"
     }]
-},
+  },
   {
     timestamps: true,
   }
 );
 
-export const Teacher = mongoose.model("Teacher", teacherSchema);
+export const Admin = mongoose.model("Admin", adminSchema);

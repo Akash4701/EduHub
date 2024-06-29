@@ -3,7 +3,7 @@ import { registerStudent, loginUser, logoutUser, findUser, getAllStudents,findSt
 import { verifyJWT } from "../middleware/auth.middleware.js"
 import multer from 'multer';
 import {storage} from "../cloudConfig.js";
-
+import { v2 as cloudinary } from 'cloudinary';
 const upload = multer({ storage });
 const router = Router()
 
