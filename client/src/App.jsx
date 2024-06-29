@@ -14,7 +14,8 @@ function App() {
   return (
     <Router>
       <Routes>
-
+      <Route path="/Teach" element={<Teacher/>} />
+      <Route path="/Stud/:studentId/Voca" element={<Vocab/>}/>
 
     
         <Route path="/" element={<Login/>}/>
