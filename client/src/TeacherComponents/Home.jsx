@@ -15,11 +15,11 @@ import {
 } from "recharts";
 
 import Calendar from "../components/Calender";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
-  const [user, setUser] = useState("")
-
+    const [user,setUser] = useState("")
+   
   const data = [
     { name: "Attendance", Class9: 60 },
     { name: "Quiz", Class9: 30 },
@@ -28,26 +28,26 @@ function Home() {
     { name: "Quiz", Class9: 80 },
   ];
 
-  const navigate = useNavigate();
+  const navigate=useNavigate();
 
-  const PreviewQuiz = () => {
+  const PreviewQuiz=()=>{
     navigate("/previewquiz");
   }
-  const giveRewards = () => {
+  const giveRewards=()=>{
     navigate("/rewards");
   }
-
+  
   useEffect(() => {
-    const User = localStorage.getItem("teacherName");
-    if (User) {
-      const user = User.replace(/"/g, "");
-      console.log(user)
-      setUser(user)
-    }
+  const User = localStorage.getItem("teacherName");
+   if(User){
+   const  user = User.replace(/"/g , "");
+    console.log(user)
+    setUser(user)
+   }
 
-
-
-  }, []);
+   
+  
+}, []);
   const divStyle = {
     height: '170px',
   };
@@ -144,14 +144,14 @@ function Home() {
           onMouseEnter={() => setIsHovered4(true)}
           onMouseLeave={() => setIsHovered4(false)}
         >
-          <NavLink to={'/myAssign'}> <div
+          <div
             className="bg-gray-800 rounded-lg p-5 flex flex-col justify-center items-center shadow-lg"
             style={{ ...cardStyle, background: "#2c2c2c", color: "#fff" }}
           >
             <CgPlayListCheck className="text-5xl ml-auto text-blue-500" />
             <h2 className="text-3xl font-bold">36</h2>
             <h2>Grade Pending Assignment</h2>
-          </div></NavLink>
+          </div>
         </div>
       </div>
 

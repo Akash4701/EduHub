@@ -1,34 +1,5 @@
 /* styles.css */
 
-* {
-  transition: all 0.3s ease;
-}
-
-section {
-  width: 400px;
-  height: 400px;
-  margin: auto;
-  padding: 2rem;
-  padding-left: 20px;
-  background: transparent;
-  background-color: #05483c85;
-  border-radius: 10px;
-  box-shadow: rgba(255, 255, 255, 0.4) 5px 5px,
-      rgba(255, 255, 255, 0.3) 10px 10px,
-      rgba(255, 255, 255, 0.2) 15px 15px,
-      rgba(255, 255, 255, 0.1) 20px 20px,
-      rgba(255, 255, 255, 0.05) 25px 25px;
-  text-align: center;
-}
-
-section:hover{
-  box-shadow: rgba(255, 255, 255, 0.4) -5px 5px,
-      rgba(255, 255, 255, 0.3) -10px 10px,
-      rgba(255, 255, 255, 0.2) -15px 15px,
-      rgba(255, 255, 255, 0.1) -20px 20px,
-      rgba(255, 255, 255, 0.05) -25px 25px;
-}
-
 body {
     margin: auto;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
