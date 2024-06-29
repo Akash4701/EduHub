@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Teacher from './Teacher'
-
+import Convert from "./convert";
 import Component from "./upload"
 import Student from "./Student"
 import NoteSection from './components/Notes';
@@ -31,6 +31,7 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route path="/convert" element={<Convert/>}/>
       <Route path="/Teach" element={<Teacher/>} />
       <Route path="/uploadAssign" element={<AssignmentUpload/>}/>
       <Route path="/Stud/:studentId/Voca" element={<Vocab/>}/>

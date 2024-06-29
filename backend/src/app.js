@@ -1,16 +1,22 @@
+
 import express from "express";
 import cors from "cors"
 import cookieParser  from "cookie-parser";
+import { v2 as cloudinaryV2 } from 'cloudinary';
+
 const app=express();
 
+// Configure Cloudinary
+cloudinaryV2.config({
+    cloud_name: process.env.CLOUDNAME,
+    api_key: process.env.CLOUDAPIKEY,
+    api_secret: process.env.CLOUDINARYSECRET,
+    secure: true
+});
 
-app.use(cors({
-    origin: 'http://localhost:5174',  // Allow requests from this origin
-    credentials: true,                // Enable credentials (cookies)
-}));
-app.use(express.json({
-    limit:"16kb"
-}))
+  
+app.use(cors());
+app.use(express.json())
 app.use(express.urlencoded({
     extended:true,
     limit:"16kb"
@@ -45,5 +51,32 @@ app.use("/api/v1/teachers",quizzRouter)
 app.use("/api/v1/teachers",getAllStudents)
 app.use("/api/v1/teachers",sendQuizMail)
  app.use("/api/v1/teachers",sendAssignMail)
+
+ app.post('/convert', async (req, res) => {
+    const { videoUrl } = req.body;
+
+    if (!videoUrl) {
+        return res.status(400).json({ error: 'Please provide a video URL' });
+    }
+
+    try {
+        // Upload the video to Cloudinary
+        const uploadResult = await cloudinaryV2.uploader.upload(videoUrl, {
+            resource_type: 'video'
+        });
+
+        // Extract audio from the uploaded video
+        const audioUrl = cloudinaryV2.url(uploadResult.public_id, {
+            resource_type: 'video',
+            format: 'mp3'
+        });
+
+        res.json({ audioUrl });
+    } catch (error) {
+        console.error('Error processing the request:', error.message, error.stack);
+        res.status(500).json({ error: 'Error processing the request' });
+    }
+});
+
 
 export default app;
