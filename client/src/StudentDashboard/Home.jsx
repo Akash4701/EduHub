@@ -66,7 +66,7 @@ function Home() {
 
   const cardStyle = {
     ...divStyle,
-    background: "#12f8f12f",
+    background: "linear-gradient(45deg, rgba(18, 248, 241, 0.5), rgba(18, 121, 248, 0.5))",
     borderRadius: "8px",
     padding: "20px",
     display: "flex",
@@ -76,7 +76,25 @@ function Home() {
     boxShadow:
       "rgba(0, 0, 0, 0.4) 0px 2px 14px, rgba(0, 0, 0, 0.3) 0px 13px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset",
     transition: "all 0.3s ease",
+    animation: "backgroundAnimation 5s infinite alternate",
   };
+  
+  // Define the keyframes for the background animation
+  const styles = `
+
+  @keyframes gradient {
+    0% {
+      background: linear-gradient(45deg, rgba(18, 248, 241, 0.5), rgba(18, 121, 248, 0.5));
+    }
+    50% {
+      background: linear-gradient(45deg, rgba(18, 248, 241, 0.5), rgba(248, 121, 18, 0.5));
+    }
+    100% {
+      background: linear-gradient(45deg, rgba(18, 248, 241, 0.5), rgba(248, 18, 121, 0.5));
+    }
+  }
+  `;
+  
 
   const cardHoverStyle = {
     // background: "#2f6f6f",
@@ -119,7 +137,7 @@ function Home() {
       {/* Main title */}
       <div className="main-title dark-bg">
         <h2 className="text-2xl font-bold">
-          Hi there {user} Welcome to ClassConnect
+          Hi there {user} Welcome to EduHub
         </h2>
       </div>
 

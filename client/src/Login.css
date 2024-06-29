@@ -1,6 +1,4 @@
-* {
-    transition: all 0.3s ease;
-}
+
 
 /* Additional styles for the login form */
 section {
@@ -9,6 +7,7 @@ section {
     margin: auto;
     padding: 2rem;
     padding-left: 20px;
+    margin-top: 150px;
     background: transparent;
     background-color: #05483c85;
     border-radius: 10px;
@@ -17,6 +16,7 @@ section {
         rgba(255, 255, 255, 0.2) 15px 15px,
         rgba(255, 255, 255, 0.1) 20px 20px,
         rgba(255, 255, 255, 0.05) 25px 25px;
+        transition: all 0.3s ease;
     text-align: center;
 }
 
@@ -26,20 +26,21 @@ section:hover{
         rgba(255, 255, 255, 0.2) -15px 15px,
         rgba(255, 255, 255, 0.1) -20px 20px,
         rgba(255, 255, 255, 0.05) -25px 25px;
+        transition: all 0.3s ease;
 }
-
+  
 h1 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
 }
-
+  
 label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
     text-align: left;
 }
-
+  
 input {
     width: 100%;
     padding: 0.75rem;
@@ -48,7 +49,7 @@ input {
     border-radius: 5px;
     font-size: 1rem;
 }
-
+  
 button {
     width: 100%;
     padding: 0.75rem;
@@ -59,25 +60,25 @@ button {
     font-size: 1rem;
     cursor: pointer;
 }
-
+  
 button:hover {
     background-color: #063b5e;
 }
-
+  
 .errMsg {
     color: red;
     margin-bottom: 1rem;
 }
-
+  
 .offscreen {
     display: none;
 }
-
+  
 .line a {
     color: #0070f3;
     text-decoration: none;
 }
-
+  
 .line a:hover {
     text-decoration: underline;
 }
