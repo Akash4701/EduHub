@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect, useContext } from 'react';
+import AuthContext from './context/AuthProvider';
+import Cookies from 'js-cookie';
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./Login.css";
 
 
 function Login() {
@@ -27,6 +29,66 @@ function Login() {
         setErrMsg('');
     }, [user, pwd, email]);
 
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+        const response = await axios.post(
+            `http://localhost:8000/api/v1/students/login`,
+            {
+                username: user,
+                password: pwd,
+                email: email
+            }
+        );
+
+        console.log(response.data);
+        
+        const  accessToken= response.data.statusCode.accessToken;
+        const  refreshToken= response.data.statusCode.refreshToken;
+        console.log("accessToken", accessToken);
+        console.log("refreshToken", refreshToken);
+        const userId = response.data.statusCode.user._id; // Access _id from user object
+        console.log("userId",userId)
+        const fullName= response.data.statusCode.user.fullName;
+        console.log("fullName",fullName)
+        localStorage.setItem("studentName", JSON.stringify(fullName));
+        const studentUsername= response.data.statusCode.user.username;
+        console.log("studentUsername",studentUsername)
+        localStorage.setItem("studentUsername", JSON.stringify(studentUsername));
+
+        // Save userId to local storage
+        localStorage.setItem("studentId", userId);
+        
+
+        // Store access token in cookie
+        Cookies.set('accessToken', accessToken, { expires: 2 });
+        // Store refresh token in cookie
+        Cookies.set('refreshToken', refreshToken, { expires: 2 });
+
+       
+        setUser(''); 
+        setPwd('');
+        setEmail('');
+        setSuccess(true);
+
+        navigate(`/Stud/${userId}`); // Navigate to the specified path
+
+    } catch (err) {
+        console.error(err.response.data);
+        if (!err.response) {
+            setErrMsg('No Server Response');
+        } else if (err.response.status === 401) {
+            setErrMsg('Missing Username, Password, or Email');
+        } else if (err.response.status === 400) {
+            setErrMsg('Unauthorized');
+        } else {
+            setErrMsg('Login Failed');
+        }
+        errRef.current.focus();
+    }
+};
+
     
     return (
         <>
@@ -43,7 +105,7 @@ function Login() {
                         {errMsg}
                     </p>
                     <h1>Sign In</h1>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <label htmlFor='username'>Username:</label>
                         <input
                             type='text'
