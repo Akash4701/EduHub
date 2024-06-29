@@ -63,7 +63,7 @@
   .sidebar-list-item:hover {
     background-color: #01b3ff3b; 
     box-shadow: rgba(0, 255, 255, 0.4) 0px 2px 14px, rgba(0, 255, 255, 0.2) 10px -3px 10px inset;
-    transform: scale(1.08);
+    /* transform: scale(1.08); */
   }
   
   .sidebar-list-item a {
