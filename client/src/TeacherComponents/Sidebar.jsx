@@ -73,12 +73,6 @@ function TeacherSidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
         <li className='sidebar-list-item'>
-          <a href="" className='flex'> {/* Updated href */}
-            <BsFillGearFill className='icon' />
-            Update Profile
-          </a>
-        </li>
-        <li className='sidebar-list-item'>
           <a href="http://localhost:8001/chat "  className='flex'>
             <BsPeopleFill className='icon' />
             Chat
