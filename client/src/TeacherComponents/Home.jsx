@@ -15,7 +15,7 @@ import {
 } from "recharts";
 
 import Calendar from "../components/Calender";
-import { useNavigate } from "react-router-dom";
+import {NavLink,useNavigate } from "react-router-dom";
 
 function Home() {
     const [user,setUser] = useState("")
@@ -160,14 +160,14 @@ function Home() {
           onMouseEnter={() => setIsHovered4(true)}
           onMouseLeave={() => setIsHovered4(false)}
         >
-          <div
+          <NavLink to={'/myAssign'}> <div
             className="bg-gray-800 rounded-lg p-5 flex flex-col justify-center items-center shadow-lg"
             style={{ ...cardStyle, background: "#2c2c2c", color: "#fff" }}
           >
             <CgPlayListCheck className="text-5xl ml-auto text-blue-500" />
             <h2 className="text-3xl font-bold">36</h2>
             <h2>Grade Pending Assignment</h2>
-          </div>
+          </div></NavLink>
         </div>
       </div>
 
