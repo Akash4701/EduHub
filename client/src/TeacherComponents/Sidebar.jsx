@@ -73,9 +73,9 @@ function TeacherSidebar({ openSidebarToggle, OpenSidebar }) {
           </a>
         </li>
         <li className='sidebar-list-item'>
-          <a href="http://localhost:8001/chat "  className='flex'>
+          <a href="liveclass"  className='flex'>
             <BsPeopleFill className='icon' />
-            Chat
+            Live Class
           </a>
         </li>
         <li className='sidebar-list-item'>

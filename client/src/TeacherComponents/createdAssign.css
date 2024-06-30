@@ -1,0 +1,28 @@
+.createdAssign{
+    position: relative;
+    left:300px;
+    top:100px;
+    width:80vw;
+}
+.createdAssign h1{
+    color: black !important;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.assignmentCard{
+    max-width: 1000px;
+    min-height: fit-content;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.solutionAssign{
+    background-color: aqua;
+    margin: 10px;
+    padding: 0px 1rem;
+    border-radius: 10px;
+}
