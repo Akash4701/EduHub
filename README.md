@@ -64,7 +64,6 @@ EduHub is a comprehensive solution designed to address the pressing challenges i
 - **NLP Processing:** Python, NLTK, and SpaCy.
 - **Video Processing:** FFmpeg.
 - **Real-time Communication:** WebSockets.
-- **Cloud Services:** AWS.
 
 ## 📚 Libraries and Dependencies
 
@@ -111,7 +110,11 @@ npm run dev
 
 ## 🎥 Application Overview
 
-[Application Overview]([https://youtu.be/QwgCgfafu6I?si=sEv3FrE8l6k_sS6d](https://youtu.be/0gSvBKpGJTY))
+[Application Overview](https://youtu.be/0gSvBKpGJTY)
+
+---
+
+I have corrected the link for the Application Overview video. Thank you for bringing this to my attention!
 
 
 Made with ❤️ by EduHub Team.
