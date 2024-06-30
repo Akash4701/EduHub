@@ -53,16 +53,18 @@ EduHub is a comprehensive solution designed to address the pressing challenges i
 ### Frontend:
 - **React.js:** A JavaScript library for building user interfaces.
 - **Tailwind CSS:** A utility-first CSS framework.
-- **Bootstrap:** A popular CSS framework.
 
 ### Backend:
 - **Node.js:** A JavaScript runtime built on Chrome's V8 JavaScript engine.
 - **Express.js:** A fast, unopinionated, minimalist web framework for Node.js.
+
+  ### DataBase:
 - **MongoDB:** A NoSQL database for flexible and scalable data storage.
+- **Clouinary** Media handling and delivery.
 
 ### Other Technologies:
-- **NLP Processing:** Python, NLTK, and SpaCy.
-- **Video Processing:** FFmpeg.
+- **NLP Processing:** Cortical.io.
+- **Video Processing:** FFmpeg,assemblyai.
 - **Real-time Communication:** WebSockets.
 
 ## 📚 Libraries and Dependencies
@@ -77,7 +79,6 @@ EduHub is a comprehensive solution designed to address the pressing challenges i
 - **qrcode**
 - **formik**
 - **axios**
-- **bootstrap**
 - **moment**
 
 ### Backend:
@@ -114,7 +115,6 @@ npm run dev
 
 ---
 
-I have corrected the link for the Application Overview video. Thank you for bringing this to my attention!
 
 
-Made with ❤️ by EduHub Team.
+
