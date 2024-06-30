@@ -13,6 +13,7 @@ import path from 'path';
 const upload = multer({ dest: 'uploads/' });
 
 const giveAssignment = asyncHandler(async (req, res) => {
+  console.log("ullu",req.body);
   const { title, description, className, subject, teacherName, guidelines, deadline,teacherUsername } = req.body;
   console.log(title)
   if (
@@ -30,7 +31,7 @@ const giveAssignment = asyncHandler(async (req, res) => {
     deadline
 
   })
-
+  console.log("teache:",assignment);
   const teacher=await Teacher.findOne({username:teacherUsername});
   console.log("teache:",teacher);
   teacher.assignments.push(assignment._id);
